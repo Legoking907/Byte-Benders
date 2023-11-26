@@ -1,0 +1,57 @@
+
+---- PLAN FOR MAKING TODO LIST APPLICATION ----
+
+Plan Contributers:
+- Reese Cochran
+
+
+
+Outline:
+
+- One header file for holding the functions used to read, write, and modify the todo list.
+
+- One main C++ file for running the application.
+
+
+HEADER FILE DETAILS:
+
+- The header file will have an "add" function, a "deleteToDoList" function, and a "replaceToDoList" 
+functionn that will be used to modify the todo list in some way.
+
+- a "writeToDoList" fimction to be executed at the end of the program to comit the changes to the txt file.
+
+- input obaining functions and an output function "displayToDoList" will also be in the the header file 
+
+
+MAIN C++ FILE DETAILS:
+
+- The program will use a list of strings to hold a temparary the todo list.
+
+- The program will first show the user what todo list txt files exist, telling the user that there is none 
+when apropriate.
+
+- The program will then prompt the user which on which of the previous todo list txt files they wish to 
+access, also asking if the user wishes to create a new todo list txt file instead. If no todo list txt files 
+exist, then the told so and will automatically have the new todo list option selected for them.
+
+    * When the creates a new todo list option is selected, the user will be prompted to enter a name for the new 
+    todo list, being reprompted if the name is invalid or has already been taken by another file in the directory.
+    the user is then taken to the [insert here] menu.
+
+    * When any of the displayed todo lists are selected, the program will display a menu of four options to the 
+    user: Display todo list, Replace todo list, Delete todo list, and back.
+
+        + The Delete todo list option will call the "deleteToDoList" function to delete the todo list.
+
+        + The Display toDo list option will call the "displayToDoList" function to display the todo list to the 
+        user.
+
+        + The Replace todo list option will prompt the user to input a new item for that part of the todo list,
+        then call the "replaceToDoList" function with that as input. Afterwards, the user is returned 
+
+        + The back option will return the user to the previous menu.
+    
+    * whenever the user returns to the menu, the program will start with displaying the new current list of txt 
+    files.
+
+    * Lastly, there is a Exit option that, when chosen, will quit the program.
