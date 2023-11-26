@@ -15,7 +15,7 @@ Outline:
 
 HEADER FILE DETAILS:
 
-- The header file will have an "add" function, a "deleteToDoList" function, and a "replaceToDoList" 
+- The header file will have an "addToDoList" function, a "deleteToDoList" function, and a "replaceToDoList" 
 functionn that will be used to modify the todo list in some way.
 
 - a "writeToDoList" fimction to be executed at the end of the program to comit the changes to the txt file.
