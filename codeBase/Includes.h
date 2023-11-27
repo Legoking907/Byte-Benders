@@ -4,7 +4,7 @@
 #ifndef String_Included
 #define String_Included
 
-#include <string.h>
+#include <string>
 
 #endif
 
