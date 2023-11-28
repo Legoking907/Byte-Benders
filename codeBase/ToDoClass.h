@@ -2,32 +2,31 @@
 #define Includes
 
 #include "Includes.h"
+#include <iostream>
 
 #endif
+
+using namespace std;
 
 class ToDo {
 
     public:
 
-    string Task;
-
-    int month, day, year;
-
-    bool done;
+    
 
     // publicly avalible varibles
 
 
     // publicly avalible functions
 
-    Task(){
-        Task = "Assaignment";
+    ToDo(){
+        task = "Assaignment";
         month = 1;
         day = 1;
         year = 2000;
         done = 0;
     }
-    Task(string Task, int month, int day, int year, bool done){
+    ToDo(string Task, int month, int day, int year, bool done){
         Task = Task;
         month = month;
         day = day;
@@ -35,12 +34,19 @@ class ToDo {
         done = done;
     }
     void Print(){
-        cout << Task << endl;
+        cout << task << endl;
         cout << "Due date: " << month << " / " << day << " / " << year << endl;
+        cout << endl;
     }
 
     private:
 
+    string task;
+
+    int month, day, year;
+
+    bool done;
+
     // Privately avalible functions
 
-}
+};

@@ -2,17 +2,22 @@
 #define Includes
 
 #include "Includes.h"
+#include <iostream>
 
 #endif
 
-void listPrint(int * tasklist){
+using namespace std;
+
+void listPrint(int * taskList, int i){
     int j = 0;
     
     cout << "Incomplete Tasks: " << endl; // Print incomplete tasks first
     cout << endl;
 
-    while(/*FIX ME*/){
-        *(incomTasksList + j).Print();
+    for(int j = 0; j < i; ++j){
+        if(*(taskList + j).bool == 1){
+            *(taskList + j).print()
+        }
     }
 
     j = 0;
@@ -20,25 +25,26 @@ void listPrint(int * tasklist){
     cout << "Completed Tasks: " << endl;
     cout << endl;
 
-    while(/*FIX ME*/){
-        *(comTasksList + j).Print();
+    for(int j = 0; j < i; ++j){
+        if(*(taskList + j).bool == 0){
+            *(taskList + j).print()
+        }
     }
 }
 
 void main() {
 
-    Task comTasks[20], incomTasks[20]; // Store tasks in arrays for complete or incomplete
+    int s = 0;
 
-    int * comTasksList = &comTasks[0]; //For passing array to function
+    ToDo tasks[20]; // Store tasks in array
 
-    int * incomTasksList = &incomTasks[0];
+    int * tasksList = &tasks[0]; //For passing array to function
+
     
     cout << "Current To Do List: " << endl; // See to do list upon startup
     cout << endl;
 
-    for(int i = 0; i < 20; ++i){ // This loop could be improved upon
-        tasks[i].print();
-    }
+    listPrint(*tasksList, s);
 
     char z;
 
@@ -53,7 +59,11 @@ void main() {
             string newtask;
             int nmonth, nday, nyear;
             cout << "Task name: ";
-            getline()
+            getline(newtask, 100);
+            cout << "Due Date: ";
+            cin >> nmonth, nday, nyear;
+            tasks[i].Task(newtask, month, day, year)
+            s += 1;
         }
 
         if(z == 'c'){ // Mark tasks as completed (different from deleting)
@@ -72,10 +82,17 @@ void main() {
         }
 
         if(z == 'd'){ // Delete a task
-
+            int y;
+            cout << "Enter the number of the task to delete: ";
+            cin >> y;
+            for(int j = y - 1; y < i; ++j){
+                tasks[j] = tasks[j + 1];
+            }
+            i -= 1;
         }
 
         // Print updated List here
+        listPrint(*tasksList, i);
 
         cout << "Press \"n\" to create a new task, \"c\" to complete a task, \"e\" to edit an existing task, \"d\" to delete a task, or any other key to exit." << endl; 
 
