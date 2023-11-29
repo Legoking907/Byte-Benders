@@ -1,7 +1,7 @@
 #ifndef Includes
 #define Includes
 
-#include "Includes.h"
+
 #include <iostream>
 
 #endif
@@ -12,7 +12,11 @@ class ToDo {
 
     public:
 
-    
+    string task;
+
+    int month, day, year;
+
+    bool done;    
 
     // publicly avalible varibles
 
@@ -26,12 +30,12 @@ class ToDo {
         year = 2000;
         done = 0;
     }
-    ToDo(string Task, int month, int day, int year, bool done){
-        Task = Task;
-        month = month;
-        day = day;
-        year = year;
-        done = done;
+    ToDo(string nnewtask, int nmonth, int nday, int nyear, bool ndone){
+        task = nnewtask;
+        month = nmonth;
+        day = nday;
+        year = nyear;
+        done = ndone;
     }
     void Print(){
         cout << task << endl;
@@ -41,11 +45,7 @@ class ToDo {
 
     private:
 
-    string task;
-
-    int month, day, year;
-
-    bool done;
+    
 
     // Privately avalible functions
 
