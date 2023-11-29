@@ -1,8 +1,7 @@
+#define ToDoClass_Included // "don't accedentially reinclude this file"
+
 #ifndef Includes
 #define Includes
-
-
-#include <iostream>
 
 #endif
 

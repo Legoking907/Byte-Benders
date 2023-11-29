@@ -2,8 +2,6 @@
 #define Includes
 
 #include "ToDoClass.h"
-#include <iostream>
-#include <string>
 
 #endif
 

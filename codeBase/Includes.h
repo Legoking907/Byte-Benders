@@ -1,5 +1,15 @@
+// one include file for reusabillity and prevention of multiple includes
+
+#define Includes_Included // "don't reinclude this file"
 
 // include c++ standard .h files
+
+#ifndef IOStream_Included
+#define IOStream_Included
+
+#include <iostream>
+
+#endif
 
 #ifndef String_Included
 #define String_Included
