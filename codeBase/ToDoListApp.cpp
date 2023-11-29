@@ -1,9 +1,7 @@
 #ifndef Includes
 #define Includes
 
-#include "ToDoClass.h"
-#include <iostream>
-#include <string>
+#include "Includes.h"
 
 #endif
 
@@ -33,7 +31,7 @@ void listPrint(ToDo * tasksList, int i){
     }
 }
 
-void main() {
+int main() {
 
     int s = 0;
 
@@ -41,11 +39,22 @@ void main() {
 
     ToDo * tasksList = &tasks[0]; //For passing array to function
 
-    
-    cout << "Current To Do List: " << endl; // See to do list upon startup
-    cout << endl;
+    ifstream get;
 
-    listPrint(tasksList, s);
+    get.open("ToDoList.txt"); // Open data from last list
+
+    while(!get.fail()){
+        cin >> tasks[s].task;
+        cin >> tasks[s].month;
+        cin >> tasks[s].day;
+        cin >> tasks[s].year;
+        cin >> tasks[s].done;
+        ++s;
+    }
+
+    get.close();
+
+    listPrint(tasksList, s); // See ToDo list upon startup.
 
     char z;
 
@@ -61,6 +70,7 @@ void main() {
             int nmonth, nday, nyear;
             bool incom = 1;
             cout << "Task name: ";
+            cin.ignore();
             getline(cin, newtask);
             cout << "Due Date: ";
             cin >> nmonth, nday, nyear;
@@ -103,5 +113,21 @@ void main() {
 
     }
 
+    ofstream save;
 
+    save.open("ToDoList.txt");
+
+    int q = 0;
+
+    for(q = 0; q < s; ++q){
+        save << tasks[q].task << endl;
+        save << tasks[q].month << endl;
+        save << tasks[q].day << endl;
+        save << tasks[q].year << endl;
+        save << tasks[q].done << endl;
+    }
+
+    save.close();
+
+    return 0;
 }

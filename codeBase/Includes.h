@@ -11,7 +11,7 @@
 #ifndef List_Included
 #define List_Included
 
-#include <list.h>
+
 
 #endif
 
@@ -21,6 +21,7 @@
 #ifndef ToDoClass_Included
 #define ToDoClass_Included
 
-#include ToDoClass
+#include "ToDoClass.h"
+#include <fstream>
 
 #endif
