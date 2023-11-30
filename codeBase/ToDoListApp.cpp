@@ -58,6 +58,11 @@ int main() {
 
     char z;
 
+    int nmonth, nday, nyear;
+    bool incom = 1;
+
+    int x;
+    int y;
 
     do { // While loop to edit to do list
 
@@ -65,45 +70,48 @@ int main() {
 
         cin >> z;        
 
-        if(z == 'n'){ // Add new tasks to list
-            string newtask;
-            int nmonth, nday, nyear;
-            bool incom = 1;
-            cout << "Task name: ";
-            cin.ignore();
-            getline(cin, newtask);
-            cout << "Due Date: ";
-            cin >> nmonth >> nday >> nyear;
-            ToDo addtask(newtask, nmonth, nday, nyear, incom);
-            tasks[s] = addtask;
-            s += 1;
-        }
+        switch (z) {
 
-        if(z == 'c'){ // Mark tasks as completed (different from deleting)
-            int x;
-            cout << "Enter the number of the task to complete: ";
-            cin >> x;
-            tasks[x - 1].done = 0;
-        }
-
-        if(z == 'e'){ // Change an existing task.
-            int x;
-            cout << "Enter the number of the task you wish to alter: ";
-            cin >> x;
-            ToDo ntask; // Easy to create a new task to replace the old
-            tasks[x] = ntask;
-        }
-
-        if(z == 'd'){ // Delete a task
-            int y;
-            cout << "Enter the number of the task to delete: ";
-            cin >> y;
-            for(int j = y - 1; j < s - 1; ++j){
-                tasks[j] = tasks[j + 1];
+            case('n'): {// Add new tasks to list
+                string newtask;
+                //int nmonth, nday, nyear;
+                incom = 1;
+                cout << "Task name: ";
+                cin.ignore();
+                getline(cin, newtask);
+                cout << "Due Date (m d y): ";
+                cin >> nmonth >> nday >> nyear;
+                ToDo addtask(newtask, nmonth, nday, nyear, incom);
+                tasks[s] = addtask;
+                s += 1;
             }
-            s -= 1;
-        }
 
+            case('c'): { // Mark tasks as completed (different from deleting)
+                //int x;
+                cout << "Enter the number for the task you wish to complete: ";
+                cin >> x;
+                tasks[x - 1].done = 0;
+            }
+
+            case('e'): { // Change an existing task.
+                //int x;
+                cout << "Enter the number of the task you wish to alter: ";
+                cin >> x;
+                ToDo ntask; // Easy to create a new task to replace the old
+                tasks[x] = ntask;
+            }
+
+            case('d'): {// Delete a task
+                //int y;
+                cout << "Enter the number of the task to delete: ";
+                cin >> y;
+                for(int j = y - 1; j < s - 1; ++j){
+                    tasks[j] = tasks[j + 1];
+                }
+                s -= 1;
+            }
+
+        }
         cout << endl;
 
         // Print updated List here
