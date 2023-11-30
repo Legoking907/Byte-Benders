@@ -1,4 +1,4 @@
-#define ToDoClass_Included // "don't accedentially reinclude this file"
+#define ToDoClass_Included // "don't accidentally reinclude this file"
 
 #ifndef Includes_Included
 #define Includes_Included
@@ -20,13 +20,13 @@ class ToDo {
 
     bool done;    
 
-    // publicly avalible varibles
+    // publicly available variables
 
 
-    // publicly avalible functions
+    // publicly available functions
 
     ToDo(){
-        task = "Assaignment";
+        task = "Assignment";
         month = 1;
         day = 1;
         year = 2000;
@@ -49,6 +49,6 @@ class ToDo {
 
     
 
-    // Privately avalible functions
+    // Privately available functions
 
 };
