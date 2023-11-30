@@ -8,6 +8,7 @@
 using namespace std;
 
 void listPrint(ToDo * tasksList, int i){
+    
     int j = 0;
     
     cout << "Incomplete Tasks: " << endl; // Print incomplete tasks first
@@ -43,12 +44,7 @@ int main() {
 
     get.open("ToDoList.txt"); // Open data from last list
 
-    while(!get.fail()){
-        cin >> tasks[s].task;
-        cin >> tasks[s].month;
-        cin >> tasks[s].day;
-        cin >> tasks[s].year;
-        cin >> tasks[s].done;
+    while(get >> tasks[s].task >> tasks[s].month >> tasks[s].day >> tasks[s].year >> tasks[s].done){
         ++s;
     }
 
@@ -57,10 +53,6 @@ int main() {
     listPrint(tasksList, s); // See ToDo list upon startup.
 
     char z;
-
-    cout << "Press \"n\" to create a new task, \"c\" to complete a task, \"e\" to edit an existing task, \"d\" to delete a task, or any other key to exit." << endl; 
-
-    cin >> z;
 
 
     do { // While loop to edit to do list
@@ -87,7 +79,7 @@ int main() {
             int x;
             cout << "Enter the number of the task to complete: ";
             cin >> x;
-            tasks[x].done = 0;
+            tasks[x - 1].done = 0;
         }
 
         if(z == 'e'){ // Change an existing task.
@@ -102,7 +94,7 @@ int main() {
             int y;
             cout << "Enter the number of the task to delete: ";
             cin >> y;
-            for(int j = y - 1; y < s; ++j){
+            for(int j = y - 1; j < s - 1; ++j){
                 tasks[j] = tasks[j + 1];
             }
             s -= 1;
