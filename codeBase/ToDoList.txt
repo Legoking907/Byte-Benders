@@ -1,20 +1,25 @@
-Complex Analysis Homework
+Complex Homework
 12
 2
 2023
+0
+
 1
+1
+2000
+0
 Baja Frame
 11
-29
+30
 2023
-1
+0
 CS Project
 11
 28
 2023
 1
-Discrete Methods Exam
+CS Lab
 11
-26
+28
 2023
-0
+1

@@ -44,7 +44,11 @@ int main() {
 
     get.open("ToDoList.txt"); // Open data from last list
 
-    while(get >> tasks[s].task >> tasks[s].month >> tasks[s].day >> tasks[s].year >> tasks[s].done){
+    string line;
+
+    while(getline(get, line)){
+        tasks[s].task = line;
+        get >> tasks[s].month >> tasks[s].day >> tasks[s].year >> tasks[s].done;
         ++s;
     }
 
@@ -99,6 +103,8 @@ int main() {
             }
             s -= 1;
         }
+
+        cout << endl;
 
         // Print updated List here
         listPrint(tasksList, s);
