@@ -84,6 +84,7 @@ int main() {
                 ToDo addtask(newtask, nmonth, nday, nyear, incom);
                 tasks[s] = addtask;
                 s += 1;
+                break;
             }
 
             case('c'): { // Mark tasks as completed (different from deleting)
@@ -91,6 +92,7 @@ int main() {
                 cout << "Enter the number for the task you wish to complete: ";
                 cin >> x;
                 tasks[x - 1].done = 0;
+                break;
             }
 
             case('e'): { // Change an existing task.
@@ -99,6 +101,7 @@ int main() {
                 cin >> x;
                 ToDo ntask; // Easy to create a new task to replace the old
                 tasks[x] = ntask;
+                break;
             }
 
             case('d'): {// Delete a task
@@ -109,6 +112,7 @@ int main() {
                     tasks[j] = tasks[j + 1];
                 }
                 s -= 1;
+                break;
             }
 
         }
