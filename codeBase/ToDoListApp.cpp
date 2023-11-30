@@ -63,8 +63,12 @@ int main() {
     cin >> z;
 
 
-    while(z == 'n' || z == 'c' || z == 'e' || z == 'd'){ // While loop to edit to do list
-        
+    do { // While loop to edit to do list
+
+        cout << "Press \"n\" to create a new task, \"c\" to complete a task, \"e\" to edit an existing task, \"d\" to delete a task, or any other key to exit." << endl; 
+
+        cin >> z;        
+
         if(z == 'n'){ // Add new tasks to list
             string newtask;
             int nmonth, nday, nyear;
@@ -73,9 +77,9 @@ int main() {
             cin.ignore();
             getline(cin, newtask);
             cout << "Due Date: ";
-            cin >> nmonth, nday, nyear;
+            cin >> nmonth >> nday >> nyear;
             ToDo addtask(newtask, nmonth, nday, nyear, incom);
-            tasks[s + 1] = addtask;
+            tasks[s] = addtask;
             s += 1;
         }
 
@@ -107,11 +111,8 @@ int main() {
         // Print updated List here
         listPrint(tasksList, s);
 
-        cout << "Press \"n\" to create a new task, \"c\" to complete a task, \"e\" to edit an existing task, \"d\" to delete a task, or any other key to exit." << endl; 
 
-        cin >> z;
-
-    }
+    } while(z == 'n' || z == 'c' || z == 'e' || z == 'd');
 
     ofstream save;
 
